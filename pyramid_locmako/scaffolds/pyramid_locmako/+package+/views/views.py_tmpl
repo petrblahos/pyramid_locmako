@@ -1,0 +1,14 @@
+from pyramid.view import view_config
+
+"""
+Just in case you want your Chameleon templates back:
+
+@view_config(route_name='home', renderer='templates/mytemplate.pt')
+def my_view(request):
+    return {'project':'{{project}}'}
+"""
+
+
+@view_config(route_name='home', renderer='/mytemplate.mako')
+def my_view(request):
+    return {'project':'{{project}}'}
