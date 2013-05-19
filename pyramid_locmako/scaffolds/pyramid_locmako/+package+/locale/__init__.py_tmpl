@@ -17,3 +17,8 @@ def add_localizer(event):
     request.localizer = localizer
     request.translate = auto_translate
 
+def includeme(config):
+    config.add_translation_dirs('{{package}}:locale')
+    config.add_subscriber('{{package}}.locale.add_renderer_globals', 'pyramid.events.BeforeRender')
+    config.add_subscriber('{{package}}.locale.add_localizer', 'pyramid.events.NewRequest')
+
