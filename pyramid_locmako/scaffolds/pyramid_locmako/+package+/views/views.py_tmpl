@@ -8,7 +8,14 @@ def my_view(request):
     return {'project':'{{project}}'}
 """
 
+import {{package}}.model.meta
 
 @view_config(route_name='home', renderer='/mytemplate.mako')
 def my_view(request):
-    return {'project':'{{project}}'}
+    """
+        You can access your db session via request.db.
+        To query your orm, you can do things like:
+        request.db.Query(model.meta.MyModel).first()
+    """
+    return {'project':'{{project}}', 'db': request.db, }
+
