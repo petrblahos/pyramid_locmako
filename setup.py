@@ -6,7 +6,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, "README")).read()
+README = open(os.path.join(here, "README.md")).read()
 README = README.split("\n\n", 1)[0] + "\n"
 
 requires = [
@@ -33,7 +33,7 @@ setup(name="pyramid_locmako",
         ],
       keywords="web wsgi pylons pyramid mako i18n",
       author="Petr Blahos",
-      author_email="petrblahos@gmail.com",
+      author_email="petrb.feedback@gmail.com",
       url="https://github.com/petrblahos/pyramid_locmako",
       license="MIT",
       packages=find_packages(),
