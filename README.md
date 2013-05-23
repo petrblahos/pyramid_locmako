@@ -27,15 +27,25 @@ to grab it here at github, unpack, then
 Usage
 =====
 
-pcreate -s pyramid_locmako projectname
+# before we start:
+virtualenv MYENV
+cd MYENV
+. bin/activate.sh
+easy_install pyramid
+git clone https://github.com/petrblahos/pyramid_locmako.git
+cd pyramid_locmako
+python setup.py install
+cd ..
 
-At the end you will be asked which languages you want to initialize.
+# now finally
+pcreate -s pyramid_locmako PLM1
+# At the end you will be asked which languages you want to initialize.
+cd PLM1
+python setup.py develop
+../bin/initialize_PLM1_db development.ini
+pserve development.ini
 
-After you have initialized your project, you will of course do the
-familiar
-  cd projectname
-  python setup.py develop
-For the initial database creation there is a convenience script 
-installed in scripts:
-  initialize_projectname_db
+What now? It is just a pyramid project. If lost head into narrative
+documentation at http://pyramid.readthedocs.org/en/latest/
+
 
