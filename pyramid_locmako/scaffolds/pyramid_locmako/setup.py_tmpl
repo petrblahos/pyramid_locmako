@@ -11,6 +11,8 @@ requires = [
     'pyramid_debugtoolbar',
     'waitress',
     'Babel', 'lingua',
+    'transaction', 'pyramid_tm',
+    'sqlalchemy', 'zope.sqlalchemy',
     ]
 
 setup(name='{{project}}',
@@ -32,11 +34,11 @@ setup(name='{{project}}',
       zip_safe=False,
       install_requires=requires,
       message_extractors = { '{{package}}': [
-	('**.py',   'lingua_python', None ),
-	('**.pt',   'lingua_xml', None ),
+        ('**.py',   'lingua_python', None ),
+        ('**.pt',   'lingua_xml', None ),
         ('templates/**.mako', 'mako', None),
         ('static/**', 'ignore', None),
-	]},
+        ]},
       tests_require=requires,
       test_suite="{{package}}",
       entry_points = """\
