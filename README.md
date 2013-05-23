@@ -35,7 +35,7 @@ After you have initialized your project, you will of course do the
 familiar
   cd projectname
   python setup.py develop
-For the initial database creation there is a conveniencescript 
-instelled in scripts:
+For the initial database creation there is a convenience script 
+installed in scripts:
   initialize_projectname_db
 
