@@ -18,5 +18,8 @@ class ModelTests(unittest.TestCase):
         db = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
         db.configure(bind=engine)
         # now I have my db (session) and can do whatever I want with it
-        q = db.query(MyModel).all()
+        res = db.query(MyModel).filter(MyModel.name=="one").all()
+
+	self.assertEqual(len(res), 1)
+	self.assertEqual(res[0].id, 1)
 
