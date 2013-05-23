@@ -7,9 +7,11 @@
   <meta name="description" content="pyramid web application" />
 </head>
 <body>
+<h1>${ _("This is a project made with pyramid_locmako scaffolding.") }</h1>
 <ul>
-  <li><a href="http://pylonsproject.org">Pylons Website</a></li>
-  <li>pyramid_locmako</li>
+  <li><a href="http://pylonsproject.org/">Pylons Website</a></li>
+  <li><a href="http://https://github.com/petrblahos/pyramid_locmako/">pyramid_locmako</a></li>
+  <li>${ _("Database session:") } ${ db }</li>
 </ul>
 </body>
 </html>
