@@ -28,12 +28,8 @@ class MyModel(Base):
         self.value = value
 
 
-def create_session(settings, prefix):
+def create_sessionmaker(settings, prefix):
     engine = engine_from_config(settings, prefix)
-
-    dbsession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
-    dbsession.configure(bind=engine)
-
-    return dbsession
+    return sessionmaker(bind=engine, extension=ZopeTransactionExtension())
 
 
